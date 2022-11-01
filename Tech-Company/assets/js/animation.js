@@ -23,3 +23,18 @@ $1('.menu__nav').addEventListener("click",()=>{
         flag = !flag;
     }
 });
+
+window.onscroll = function(){
+    var reveals = document.querySelectorAll('.reveal');
+    for(let i = 0; i < reveals.length;i++){
+        var windowHeight = window.innerHeight;
+        var revealTop = reveals[i].getBoundingClientRect().top;
+        var revealPoint = 150;
+
+        if(revealTop < windowHeight - revealPoint){
+            reveals[i].classList.add('r_active');
+        }else{
+            reveals[i].classList.remove('r_active');
+        }
+    }
+}

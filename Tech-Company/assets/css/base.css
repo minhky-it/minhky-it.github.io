@@ -166,3 +166,12 @@
 .btn--primary:hover{
     color: black;
 }
+.reveal{
+    transform: translateY(150px);
+    opacity: 0;
+    transition: all 2s ease;
+}
+.reveal.r_active{
+    transform: translateY(0);
+    opacity: 1;
+}
