@@ -1,0 +1,168 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Arial',Helvetica,sans-serif;
+}
+/* Root */
+:root{
+    --primary-color: #ffbf23;
+    --hover_active-color: #555;
+    --font_0: normal normal normal 50px/1.1em'space grotesk',sans-serif;
+    --font_1: normal normal normal 16px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+    --font_2: normal normal normal 38px/1.3em'space grotesk',sans-serif;
+    --font_3: normal normal normal 28px/1.4em'space grotesk',sans-serif;
+    --font_4: normal normal normal 26px/1.4em'space grotesk',sans-serif;
+    --font_5: normal normal bold 22px/1.4em'space grotesk',sans-serif;
+    --font_6: normal normal bold 16px/1.4em'space grotesk',sans-serif;
+    --font_7: normal normal bold 20px/1.4em proxima-n-w01-reg,proxima-n-w05-reg,sans-serif;
+    --font_8: normal normal normal 16px/1.6em proxima-n-w01-reg,proxima-n-w05-reg,sans-serif;
+    --font_9: normal normal normal 14px/1.2em proxima-n-w01-reg,proxima-n-w05-reg,sans-serif;
+    --font_10: normal normal normal 12px/1.4em din-next-w01-light,din-next-w02-light,din-next-w10-light,sans-serif;
+}
+.row{
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 12px;
+}
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+/* For mobile phones: */
+[class*="col-"] {
+    width: 100%;
+    float: left;
+}
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+    .col-12 {width: 100%;}
+    .col-s-none{display: none;}
+    
+}
+@media only screen and (max-width: 767px) {
+/* For iphone: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    .col-s-none{display: none;}
+    .row{
+        width: 100%;
+    }
+    /* Nav */
+    .navbar__list{
+        display: none !important;
+    }
+    .header{
+        flex-direction: column;
+        align-self: baseline;
+        justify-content: space-around !important;
+        align-items: unset !important;
+    }
+    .btn__get-started-header{
+        width: 100%;
+    }
+    .menu__nav{
+        display: block !important;
+        position: absolute;
+        right: 0;
+        top: 20px;
+        z-index: 11;
+    }
+    .menu__nav > div{
+        background-color: black;
+        width: 30px;
+        height: 2px;
+        margin: 8px auto;
+
+    }
+    
+    .home__heading-list,
+    .product__heading-list
+    {
+        flex-direction: column !important;
+    }
+    .home__heading-list > li:first-child,
+    .product__heading-list > li:first-child
+    {
+        margin-top: 0;
+    }
+    .home__heading-list > li,
+    .product__heading-list > li
+    {
+        margin: 16px 0 !important;
+    }
+    .home__heading-list > li:last-child,
+    .product__heading-list > li:last-child
+    {
+        margin-bottom: 0;
+    }
+    .explore-box{
+        margin: 50px 0 !important;
+        
+    }
+    .pricing-plans__item{
+        margin-bottom: 100px !important;
+    }
+    .product__item > img{
+        width: unset !important;
+    }
+    .client__item{
+        margin-bottom: 50px !important;
+    }
+    .explore-box-btn{
+        width: 100% !important;
+        max-width: unset !important;
+    }
+
+}
+  
+
+/* Active */
+.active{
+    color: var(--hover_active-color) !important;
+}
+.hidden{
+    display: none;
+}
+/* Buttons */
+.btn{
+    padding:13px;
+    text-align: center;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.btn:hover{
+    filter: grayscale(0.50);
+    opacity: 0.9;
+}
+.btn--primary{
+    background-color: var(--primary-color);
+    color: black;
+}
+.btn--primary:hover{
+    color: black;
+}
