@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thắp hương TDT</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        .wrapper{
+            max-width: 1200px;
+            height: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .gate{
+            position: relative;
+            height: 600px;
+            width: 100%;
+            background-color: aliceblue;
+            background: url(gate.png) center no-repeat;
+            background-size: contain;
+            
+        }
+        .logo{
+            background: url(TDT_logo.png) center no-repeat;
+            width: 15%;
+            height: 100px;
+            background-size: contain;
+            margin: 0 auto;
+            margin-top: 10%;
+        }
+        .table{
+            background: url(table.png) center no-repeat;
+            width: 200px;
+            height: 240px;
+            background-size: contain;
+            align-self: center;
+        }
+        .thaphuong{
+            position: absolute;
+            height: 150px;
+            width: 150px;
+            align-self: center;
+            opacity: 0;
+            bottom: 190px;
+        }
+        @keyframes send{
+            to{
+                opacity: 100%;
+            }
+        }
+        .expectation{
+            padding-top: 100px;
+            display: flex;
+            flex-direction: column;
+            width: 60%;
+        }
+        .expectation > textarea{
+            width: 100%;
+            padding: 12px;
+            font-size: 24px;
+        }
+        button{
+            padding: 24px;
+            margin: 12px;
+            max-width: 200px;
+            font-size: 24px;
+            align-self: center;
+            border: none;
+            outline: none;
+            background-color: darkkhaki;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        button:hover{
+            background-color: antiquewhite;
+        }
+        .newbox{
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-45%, 50px);
+        }
+        #congra{
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="gate">
+            <div class="logo"></div>
+            <div class="newbox">
+                <img class="thaphuong" src="thaphuong.gif" alt="" srcset="">
+                <div class="table"></div>
+            </div>
+        </div>
+        <div class="expectation">
+            <label id="label" for=""><b>Nhập nguyện vọng:</b></label>
+            <textarea required id="text" rows="3" cols="15"></textarea>
+            <h2 id="congra">Chúc điều mong muốn của bạn thành hiện thực ^^!</h2>
+            <button id="#submit" type="submit">Cầu nguyện</button>
+        </div>
+    </div>
+    <script>
+        const send = document.getElementById('#submit');
+        const stick = document.querySelector('.thaphuong');
+        const text = document.querySelector('#text');
+        const congra = document.querySelector('#congra');
+        const label = document.querySelector('#label');
+        send.onclick = ()=>{
+            if(text.value){
+                stick.style ='animation: send linear 2s; animation-fill-mode: forwards;';
+                text.value = "";
+                text.style.display = 'none';
+                label.style.display = 'none';
+                congra.style.display = 'block';
+                send.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
